@@ -1,0 +1,16 @@
+# Time after which the next message is sent
+timer: 60s
+
+# Conditions values: >, <, =, !=, <=, >=
+messages:
+  - conditions:
+      - "%statistic_player_kills%>10"
+    message: |-
+      &c&lLine1
+      Line2
+      Line
+  - conditions:
+      - "perm:automessage.vip"
+    message: |-
+      message2
+      &aHello

@@ -1,0 +1,7 @@
+name: AutoMessage
+version: 1
+main: me.rejomy.automessage.Main
+commands:
+  automessage:
+    permission: automessage.command
+    permission-message: You don`t have permission for perform this command.
