@@ -17,11 +17,7 @@ public class TimeUtil {
 
             char timeKey = time.charAt(time.length() - 1);
 
-            System.out.println(time);
-
             String rep = time.replaceAll("\\D", "");
-
-            System.out.println(rep);
 
             int value = Integer.parseInt(rep);
 
