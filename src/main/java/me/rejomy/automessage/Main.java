@@ -22,7 +22,6 @@ public class Main extends JavaPlugin {
     public void onLoad() {
         instance = this;
         saveDefaultConfig();
-        sections = getConfig().getMapList("messages");
     }
 
     @Override
@@ -40,6 +39,8 @@ public class Main extends JavaPlugin {
         Bukkit.getScheduler().cancelTask(taskId);
     }
     public void runTask() {
+        sections = getConfig().getMapList("messages");
+
         TimeUtil timeUtil = new TimeUtil();
 
         long repeatTicks = timeUtil.getTimeInMillis(getConfig().getString("timer")) / 50;

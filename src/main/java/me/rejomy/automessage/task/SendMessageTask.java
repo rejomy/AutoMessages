@@ -11,7 +11,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class SendMessageTask extends BukkitRunnable {
-
     private final HashMap<Player, Integer> MAP = new HashMap<>();
     private byte handleCount = 0;
 
@@ -52,7 +51,8 @@ public class SendMessageTask extends BukkitRunnable {
         MAP.put(player, element);
 
         if(isVerified) {
-            String message = ColorUtil.toColor((String) Main.getInstance().sections.get(saveElement).get("message"));
+            String message = ColorUtil.toColor(((String) Main.getInstance().sections.get(saveElement).get("message"))
+                    .replaceAll("%newline%", "                                                           "));
 
             player.sendMessage(message);
 
