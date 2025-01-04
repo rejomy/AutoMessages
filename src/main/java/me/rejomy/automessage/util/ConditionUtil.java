@@ -13,6 +13,11 @@ public class ConditionUtil {
     List<Object> parseResult = new ArrayList<>();
 
     public ConditionUtil(Player player, List<String> conditions) {
+        // Conditions for send message does not exists, we can send message freely
+        if (conditions == null) {
+            verify = true;
+            return;
+        }
 
         for (String condition : conditions) {
 

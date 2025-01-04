@@ -16,7 +16,7 @@ public class SendMessageTask extends BukkitRunnable {
 
     @Override
     public void run() {
-        for(Player player : Bukkit.getOnlinePlayers()) {
+        for (Player player : Bukkit.getOnlinePlayers()) {
             int element = MAP.getOrDefault(player, 0);
             handle(player, element);
             handleCount = 0;
@@ -38,19 +38,19 @@ public class SendMessageTask extends BukkitRunnable {
 
         handleCount += 1;
 
-        if(handleCount > element + Main.getInstance().sections.size()) {
+        if (handleCount > element + Main.getInstance().sections.size()) {
             return false;
         }
 
-        element+=1;
+        element += 1;
 
-        if(Main.getInstance().sections.size() - 1 < element) {
+        if (Main.getInstance().sections.size() - 1 < element) {
             element = 0;
         }
 
         MAP.put(player, element);
 
-        if(isVerified) {
+        if (isVerified) {
             String message = ColorUtil.toColor(((String) Main.getInstance().sections.get(saveElement).get("message"))
                     .replaceAll("%newline%", "                                                           "));
 
