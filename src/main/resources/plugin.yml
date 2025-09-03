@@ -1,6 +1,7 @@
 name: AutoMessage
 version: 1
 main: me.rejomy.automessage.Main
+api-version: 1.21
 commands:
   automessage:
     permission: automessage.command
